@@ -1,0 +1,23 @@
+@if (isLoading) {
+    <p>Loading...</p>
+}@else {
+    <div class="grid grid-cols-4 mx-auto">
+        @for (item of data; track $index) {
+        <div class="max-w-xs rounded overflow-hidden shadow-lg bg-white cursor-pointer" [routerLink]="'/post/'+item?.id">
+            <img class="w-full" [src]="item?.url" alt="Placeholder Image">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{{item?.title}}</div>
+            </div>
+            <div class="px-6 pb-4">
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                    {{item?.id}}
+                    </span>
+               
+            </div>
+        </div>
+        }
+    </div>
+}
+
+
